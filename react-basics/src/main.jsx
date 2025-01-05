@@ -5,7 +5,7 @@ const root = createRoot(document.getElementById("root"))
 
 function Page(){
   return(
-    <div>
+    <>
       <header>
         <img src="/src/assets/images/React.js_logo-512.webp" alt="React logo" width="50px" />
       </header>
@@ -18,7 +18,7 @@ function Page(){
     <footer>
       <small>©️ 2024 React Development. All rights reserved.</small>
     </footer>
-    </div>
+    </>
     
   )
 }
