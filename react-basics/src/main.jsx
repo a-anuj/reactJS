@@ -1,7 +1,5 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 
 const root = createRoot(document.getElementById("root"))
 
@@ -18,4 +16,17 @@ const testElement =
   </ul>
 </div>
 
-root.render(testElement)
+root.render(
+  <Page/>
+)
+
+
+function Page(){
+  return (
+    <ol>
+      <li>Im very intersted to learn react</li>
+      <li>Nice library</li>
+      <li>Nice UI/UX</li>
+    </ol>
+  )
+}
