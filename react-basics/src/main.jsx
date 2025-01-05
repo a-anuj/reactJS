@@ -11,20 +11,34 @@ function Header(){
   )
 }
 
+function MainContent(){
+  return (
+    <>
+    <h1>Reasons Im exited to learn React</h1>
+    <ol>
+      <li>Component-based architecture: React's modular approach allows you to build reusable components, making development more efficient and maintainable.</li>
+  
+      <li>Fast rendering with Virtual DOM: React optimizes updates to the actual DOM, ensuring smooth and fast user interfaces.</li>
+    </ol>
+    </>
+  )
+}
+
+function Footer(){
+  <>
+    <footer>
+      <small>©️ 2024 React Development. All rights reserved.</small>
+    </footer>
+  </>
+}
 
 function Page(){
   return(
     <>
       <Header/>
-      <h1>Reasons Im exited to learn React</h1>
-      <ol>
-        <li>Component-based architecture: React's modular approach allows you to build reusable components, making development more efficient and maintainable.</li>
+      <MainContent/>
+      <Footer/>
     
-        <li>Fast rendering with Virtual DOM: React optimizes updates to the actual DOM, ensuring smooth and fast user interfaces.</li>
-      </ol>
-    <footer>
-      <small>©️ 2024 React Development. All rights reserved.</small>
-    </footer>
     </>
     
   )
