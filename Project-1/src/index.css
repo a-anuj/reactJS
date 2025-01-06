@@ -15,19 +15,20 @@ header{
 }
 
 nav{
+  margin-left: 20px;
   display: flex;
   align-items: center ;
   height: 100%;
 }
 
 nav  img{
-  width: 40px;
+  width: 45px;
   margin-right: 7px;
 }
 
 nav > span{
   color: #61DAFB;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -35,10 +36,10 @@ main{
   margin-top: 0px;
   padding: 60px 30px;
   background: url('src/assets/images/react-logo-half.png');
+  background-size: 225px;
   background-repeat: no-repeat;
   background-position-x: right;
-  background-position-y: 70%;
-
+  background-position-y: 100%;
 }
 
 main h1{
@@ -55,12 +56,13 @@ main li{
 }
 
 .list{
-
+  margin-left: 45px;
   margin-top: 46px;
-  max-width: 450px;
+  max-width: 550px;
 }
 
 .list li{
+  font-size: 17px;
   padding-block: 10px;
   list-style: 19px;
 }
