@@ -60,3 +60,9 @@ main li{
   padding-block: 10px;
   list-style: 19px;
 }
+
+.list li::marker{
+  color:#61DAFB;
+  font-size:1.5rem;
+  
+}
