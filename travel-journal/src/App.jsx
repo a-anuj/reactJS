@@ -1,6 +1,13 @@
 import Header from "./components/Header"
-export default function App(){
-    return(
-        <Header />
+import Entry from "./components/Entry"
+
+export default function App() {
+    return (
+        <>
+            <Header />
+            <main className="container">
+                <Entry />
+            </main>
+        </>
     )
 }
