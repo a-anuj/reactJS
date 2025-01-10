@@ -1,8 +1,19 @@
 import Joke from "./components/Joke"
+import jokesData from "../jokesData"
 export default function App(){
+  
+  const jokeElements = jokesData.map((joke)=>{
+    return <Joke setup={joke.setup} punchline={joke.punchline} />
+  })
+  
   return (
     <main>
-      <Joke
+      {jokeElements}
+    </main>
+  )
+}
+
+/*<Joke
         setup="I got my daughter a fridge for her birthday. "
         punchline="I can't wait to see her face light up when she opens it."
       />
@@ -22,6 +33,4 @@ export default function App(){
         setup="What's the best thing about Switzerland?"
         punchline="I don't know, but the flag is a big plus!"
       />
-    </main>
-  )
-}
+*/
