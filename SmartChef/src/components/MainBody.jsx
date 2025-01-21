@@ -7,13 +7,16 @@ export default function MainBody(){
 
     function handleSubmit(event){
         event.preventDefault()
-        console.log("Submitted!!")
+        const formData = new FormData(event.currentTarget)
+        const newIngredient = formData.get("ingredient")
+        ingredients.push(newIngredient)
+        console.log(ingredients)
     }
     
     return(
         <main>
             <form onSubmit={handleSubmit} className="add-ingredient-form">
-                <input type="text" aria-label="Add ingredient" placeholder="e.g. tomato"/>
+                <input type="text" aria-label="Add ingredient" placeholder="e.g. tomato" name="ingredient"/>
                 <button>Add ingredient</button>
             </form>
             <ul>
