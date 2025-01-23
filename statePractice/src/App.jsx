@@ -6,13 +6,13 @@ export default function App() {
     let [value,setValue] = React.useState(3)
 
     function add(){
-      setValue(value+1)
+      setValue(prevValue=>prevValue+1)
     }
     function subtract(){
-      setValue(value-1)
+      setValue(prevValue=>prevValue-1)
     }
 
-    return (
+    return (  
         <main className="container">
             <h1>How many hours did you study React today?</h1>
             <div className="counter">
