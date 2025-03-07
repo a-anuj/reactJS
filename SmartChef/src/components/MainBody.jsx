@@ -21,6 +21,15 @@ export default function Main() {
             return true
         }
     }
+
+    function showRecipeButton(){
+        if(ingredients.length>3){
+            return true
+        }
+        else{
+            return false
+        }
+    }
     
 
     return (
@@ -37,13 +46,13 @@ export default function Main() {
             {toShowIngredientsList() ? <section className="sectionforlist">
                 <h2>Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
-                <div className="get-recipe-container">
+                {showRecipeButton() && <div className="get-recipe-container">
                     <div>
                         <h3>Ready for a recipe?</h3>
                         <p>Generate a recipe from your list of ingredients.</p>
                     </div>
                     <button>Get a recipe</button>
-                </div>
+                </div>}
             </section> : null}
         </main>
     )
