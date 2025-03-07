@@ -13,11 +13,15 @@ export default function Main() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
     
-    /**
-     * Challenge:
-     * Using conditional rendering, only render the new <section> IF
-     * there are ingredients added to the list of ingredients.
-     */
+    function toShowIngredientsList(){
+        if(ingredients.length === 0){
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    
 
     return (
         <main>
@@ -30,7 +34,7 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            <section className="sectionforlist">
+            {toShowIngredientsList() ? <section className="sectionforlist">
                 <h2>Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
                 <div className="get-recipe-container">
@@ -40,7 +44,7 @@ export default function Main() {
                     </div>
                     <button>Get a recipe</button>
                 </div>
-            </section>
+            </section> : null}
         </main>
     )
 }
