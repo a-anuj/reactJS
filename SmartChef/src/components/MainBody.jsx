@@ -1,30 +1,46 @@
 import React from "react"
 
-export default function MainBody(){
-    const [ingredients,setIngredients] = React.useState([])
+export default function Main() {
 
-    const ingredientList = ingredients.map((ingredient) => (
+    const [ingredients, setIngredients] = React.useState([])
+
+    const ingredientsListItems = ingredients.map(ingredient => (
         <li key={ingredient}>{ingredient}</li>
     ))
 
-    function addIngredient(formData){
+    function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
-
-        setIngredients(
-            prevIngredients => [...prevIngredients,newIngredient]
-        )
-        console.log(ingredients)
+        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
     
-    return(
+    /**
+     * Challenge:
+     * Using conditional rendering, only render the new <section> IF
+     * there are ingredients added to the list of ingredients.
+     */
+
+    return (
         <main>
             <form action={addIngredient} className="add-ingredient-form">
-                <input type="text" aria-label="Add ingredient" placeholder="e.g. tomato" name="ingredient"/>
+                <input
+                    type="text"
+                    placeholder="e.g. oregano"
+                    aria-label="Add ingredient"
+                    name="ingredient"
+                />
                 <button>Add ingredient</button>
             </form>
-            <ul>
-                {ingredientList}
-            </ul>
+            <section className="sectionforlist">
+                <h2>Ingredients on hand:</h2>
+                <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
+                <div className="get-recipe-container">
+                    <div>
+                        <h3>Ready for a recipe?</h3>
+                        <p>Generate a recipe from your list of ingredients.</p>
+                    </div>
+                    <button>Get a recipe</button>
+                </div>
+            </section>
         </main>
     )
 }
